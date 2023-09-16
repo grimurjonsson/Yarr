@@ -1,0 +1,15 @@
+# Ignore any files in /bin and /obj Folders
+**/bin/*
+**/obj/*
+
+# Ignore configuration for Rider
+.idea
+
+# Ignore OSX thing
+**/.DS_Store 
+
+# Ignore packages folder
+packages
+
+# Ignore your local builds
+publish
