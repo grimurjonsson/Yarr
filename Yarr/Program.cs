@@ -9,7 +9,7 @@ using Spectre.Console;
 using Spectre.Console.Cli;
 
 var builder = Host.CreateApplicationBuilder(args);
-builder.Configuration.AddJsonFile(YarrConfiguration.ConfigurationPath, optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile(YarrConfiguration.ConfigurationPath, optional: true, reloadOnChange: true);
 builder.Services.AddOptions<SonarrConfiguration>().BindConfiguration("Sonarr");
 builder.Services.AddTransient<SonarrClient>();
 builder.Services.AddOptions<RadarrConfiguration>().BindConfiguration("Radarr");

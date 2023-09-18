@@ -14,7 +14,7 @@ public class ConfigureCommand : Command<ConfigureSettings>
     // ReSharper disable RedundantNullableFlowAttribute
     public override int Execute([NotNull] CommandContext context, [NotNull] ConfigureSettings settings)
     {
-        var su = AnsiConsole.Prompt(new TextPrompt<string>("Sonarr base Url:")
+        var su = AnsiConsole.Prompt(new TextPrompt<string>("Sonarr base Url (http://example.com:1234):")
             .DefaultValue(YarrConfiguration.GetSonarrUrl())
             .ShowDefaultValue(true)
         );
@@ -22,7 +22,7 @@ public class ConfigureCommand : Command<ConfigureSettings>
             .DefaultValue(YarrConfiguration.GetSonarrApiKey())
             .ShowDefaultValue(true)
         );
-        var sdq = AnsiConsole.Prompt(new TextPrompt<string>("Sonarr Default Quality (add dropdown here pls):")
+        var sdq = AnsiConsole.Prompt(new TextPrompt<string>("Sonarr Default Quality Name (optional, add dropdown here pls):")
             .DefaultValue(YarrConfiguration.GetSonarrDefaultQualityProfile())
             .ShowDefaultValue(true)
         );
@@ -38,7 +38,7 @@ public class ConfigureCommand : Command<ConfigureSettings>
             sds = AnsiConsole.Prompt(prompt);
         }
 
-        var ru = AnsiConsole.Prompt(new TextPrompt<string>("Radarr base Url:")
+        var ru = AnsiConsole.Prompt(new TextPrompt<string>("Radarr base Url (http://example.com:1234):")
             .DefaultValue(YarrConfiguration.GetRadarrUrl())
             .ShowDefaultValue(true)
         );
